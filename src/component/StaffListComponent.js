@@ -1,26 +1,24 @@
 import React, { Component } from "react";
-import Media from 'reactstrap';
+import {Media} from 'reactstrap';
 import {STAFFS} from "../shared/staffs";
 
 class StaffList extends Component{
   constructor(props) {
     super(props);
-    this.state.names ={
+    this.state = {
       staffs : STAFFS
     }
   }
-
   render() {
     const menu = this.state.staffs.map((names) => {
       return (
         <div key={names.id} className="col-12 mt-5">
           <Media tag="li">
             <Media body className="ml-5">
-              <Media heading>{names.name}</Media>
+              <p>{names.name}</p>
             </Media>
           </Media>
         </div>
-
       );
     })
     return(
@@ -30,7 +28,6 @@ class StaffList extends Component{
             {menu}
           </Media>
         </div>
-
       </div>
     )
   }
