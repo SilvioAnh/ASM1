@@ -4,7 +4,8 @@ import {Navbar, NavbarBrand} from "reactstrap";
 import StaffList from "./component/StaffListComponent";
 import './App.css';
 import { STAFFS } from "./shared/staffs";
-//import dateFormat from 'dateformat'
+//import dateFormat from 'dateformat
+//import { useMediaQuery } from 'react-responsive'
 
 class App extends Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class App extends Component {
   }
   render() {
     return (
-      <div>
+      <div >
         <Navbar dark color ="primary">
           <div className="container">
             <NavbarBrand href="/">

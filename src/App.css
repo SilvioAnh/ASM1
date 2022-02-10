@@ -36,3 +36,20 @@
 /*    transform: rotate(360deg);*/
 /*  }*/
 /*}*/
+
+body {
+  background-color: #282c34;
+  color: black;
+  font-family: Sans-Serif, serif;
+}
+.card1 {
+  border: 1px solid red;
+  padding: 20px;
+  width: 300px;
+
+}
+.card2{
+  color: white;
+  margin-left: 20px;
+}
+

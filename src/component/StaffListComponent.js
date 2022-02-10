@@ -19,7 +19,7 @@ class StaffList extends Component{
   renderStaff(names){
     if(names != null){
       return(
-        <Card>
+        <Card className="card1">
             <CardTitle>Họ và tên: {names.name}</CardTitle>
             <CardText>Ngày sinh: {dateFormat(names.doB, "dd/mm/yyyy")}</CardText>
             <CardText>Ngày vào công ty: {dateFormat(names.startDate, "dd/mm/yyyy")}</CardText>
@@ -31,14 +31,14 @@ class StaffList extends Component{
     }
     else{
       return(
-        <div>Bấn vào tên nhân viên để xem thông tin</div>
+        <div className="card2">Bấn vào tên nhân viên để xem thông tin</div>
       );
     }
   }
   render() {
     const menu = this.props.staffs.map((names) => {
       return (
-        <div key={names.id} className="col-12 col-md-3 m-1">
+        <div key={names.id} className="col-lg-3 col-md-4 m-1">
           <Card onClick = {() => this.onStaffSelected(names) //onClick: khi click vào tên nhân viên sẽ thực hiện lệch
           }>
             {/*<CardImg width="100%" src={names.image} alt={names.name}/>*/}
