@@ -8,7 +8,8 @@ class StaffList extends Component{
   constructor(props) {
     super(props);
     this.state = {
-      selectedStaff : null ,
+      selectedStaff : null,
+      them : null
     }
   }
   onStaffSelected(names){
@@ -35,23 +36,15 @@ class StaffList extends Component{
   }
   render() {
     const menu = this.props.staffs.map((names) => {
-      return (
-        <div key={names.id} className="col-lg-3 col-md-4 m-1">
-          <Card onClick = {() => this.onStaffSelected(names)}>
-            <CardTitle>{names.name}</CardTitle>
-          </Card>
-        </div>
-      );
+
+        return (
+          <div key={names.id} className="col-lg-3 col-md-4 m-1">
+            <Card onClick={() => this.onStaffSelected(names)}>
+              <CardTitle>{names.name}</CardTitle>
+            </Card>
+          </div>
+        );
     })
-    // const thaydoicot = this.props.staffs.map((names)=>{
-    //   return(
-    //     <div key={names.id} className="col-lg-1 col-md-3 m-1">
-    //       <Card onClick={()=> this.thaydoicot}>
-    //
-    //       </Card>
-    //     </div>
-    //   );
-    // })
     return(
       <div className="container">
         <div className="row">
@@ -60,11 +53,9 @@ class StaffList extends Component{
         <div className="row">
           {this.renderStaff(this.state.selectedStaff)}
         </div>
-        {/*<Card onClick = {() => {this.thaydoicot(names)}}>*/}
-        {/*  <CardTitle>Thay đổi cột</CardTitle>*/}
-        {/*</Card>*/}
       </div>
     )
   }
+
 }
 export default StaffList;
