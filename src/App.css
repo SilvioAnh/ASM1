@@ -45,8 +45,8 @@ body {
 .card1 {
   border: 1px solid red;
   padding: 20px;
-  width: 300px;
-
+  width: 280px;
+  margin-left: 20px;
 }
 .card2{
   color: white;

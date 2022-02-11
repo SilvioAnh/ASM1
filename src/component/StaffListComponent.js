@@ -8,11 +8,9 @@ class StaffList extends Component{
   constructor(props) {
     super(props);
     this.state = {
-      selectedStaff : null ,//Ban đầu chưa chọn vào bất kỳ nhân viên nào.
-
+      selectedStaff : null ,
     }
   }
-
   onStaffSelected(names){
     this.setState({selectedStaff: names})
   }
@@ -39,15 +37,21 @@ class StaffList extends Component{
     const menu = this.props.staffs.map((names) => {
       return (
         <div key={names.id} className="col-lg-3 col-md-4 m-1">
-          <Card onClick = {() => this.onStaffSelected(names) //onClick: khi click vào tên nhân viên sẽ thực hiện lệch
-          }>
-            {/*<CardImg width="100%" src={names.image} alt={names.name}/>*/}
+          <Card onClick = {() => this.onStaffSelected(names)}>
             <CardTitle>{names.name}</CardTitle>
-
           </Card>
         </div>
       );
     })
+    // const thaydoicot = this.props.staffs.map((names)=>{
+    //   return(
+    //     <div key={names.id} className="col-lg-1 col-md-3 m-1">
+    //       <Card onClick={()=> this.thaydoicot}>
+    //
+    //       </Card>
+    //     </div>
+    //   );
+    // })
     return(
       <div className="container">
         <div className="row">
@@ -56,6 +60,9 @@ class StaffList extends Component{
         <div className="row">
           {this.renderStaff(this.state.selectedStaff)}
         </div>
+        {/*<Card onClick = {() => {this.thaydoicot(names)}}>*/}
+        {/*  <CardTitle>Thay đổi cột</CardTitle>*/}
+        {/*</Card>*/}
       </div>
     )
   }
