@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import {Card, CardTitle, CardText } from 'reactstrap';
-// import {STAFFS} from "../shared/staffs";
 import dateFormat from 'dateformat'
-//import {DEPARTMENTS} from "../shared/staffs";
 
 class StaffList extends Component{
   constructor(props) {
@@ -56,6 +54,5 @@ class StaffList extends Component{
       </div>
     )
   }
-
 }
 export default StaffList;
