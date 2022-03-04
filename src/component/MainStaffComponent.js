@@ -1,30 +1,29 @@
 import React, { Component } from "react";
 import Header from "./HeaderComponent"
-import {Switch, Route, Redirect} from "react-router-dom";
+//import {Switch} from "react-router-dom";
 import Footer from "./FooterComponent";
-// import StaffList from "./StaffListComponent";
+import StaffList from "./StaffListComponent";
 // import './App.css';
-import {STAFFS} from "../shared/staffs";
+import {STAFFS, DEPARTMENTS,ROLE} from "../shared/staffs";
 
 class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      staffs : STAFFS
+      staffs : STAFFS,
+      departments: DEPARTMENTS,
+      role: ROLE,
     };
   }
   render() {
     return (
       <div >
         <Header />
-        {/*<StaffList staffs = {this.state.staffs} />*/}
+        <StaffList staffs = {this.state.staffs} />
         {/*<Switch>*/}
-        {/*  <Route path="/home" component={HomePage}/>*/}
-        {/*  <Route path="/aboutus" component={() => <About leaders={ this.state.leaders}/>}/>*/}
-        {/*  <Route exact path ="/menu" component={()=><Menu dishes={this.state.dishes}/>}/>*/}
-        {/*  <Route path="/menu/:dishId" component={DishWithId}/>*/}
-        {/*  <Route exact path="/contactus" component={Contact}/>*/}
-        {/*  <Redirect to="/home"/>*/}
+          {/*<Route path="/staff" component={StaffList}/>*/}
+        {/*  <Route path="/department" component={() => <Department departments={ this.state.departments}/>}/>*/}
+        {/*  <Route exact path ="/payroll" component={()=> <Payroll  payroll={this.state.role}/>}/>*/}
         {/*</Switch>*/}
         <Footer />
       </div>

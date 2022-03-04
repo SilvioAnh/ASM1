@@ -3,10 +3,10 @@ import React from "react";
 
 function Footer(){
   return(
-    <div className="footer">
+    <div className="footer car1 mt-5">
       <div className="container">
         <div className="row justify-content-center">
-          <div className="col-7 col-sm-5">
+          <div className="col-7 col-sm-5 mt-5">
             <h5>Our Address</h5>
             <address>
               121, Clear Water Bay Road<br/>

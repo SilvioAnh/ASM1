@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {Card, CardTitle, CardText } from 'reactstrap';
+import {Card, CardTitle, CardText, CardImg} from 'reactstrap';
 import dateFormat from 'dateformat'
 
 class StaffList extends Component{
@@ -7,7 +7,6 @@ class StaffList extends Component{
     super(props);
     this.state = {
       selectedStaff : null,
-      them : null
     }
   }
   onStaffSelected(names){
@@ -28,23 +27,24 @@ class StaffList extends Component{
     }
     else{
       return(
-        <div className="card2">Bấn vào tên nhân viên để xem thông tin</div>
+        <div/>
       );
     }
   }
   render() {
     const menu = this.props.staffs.map((names) => {
-
         return (
-          <div key={names.id} className="col-lg-3 col-md-4 m-1">
+          <div key={names.id} className="col-2 mt-2 mb-2">
             <Card onClick={() => this.onStaffSelected(names)}>
-              <CardTitle>{names.name}</CardTitle>
+              <CardImg width="100%" src={names.image} alt={names.name}/>
+              <CardTitle className="m-auto">{names.name}</CardTitle>
             </Card>
           </div>
         );
     })
     return(
-      <div className="container">
+      <React.Fragment>
+        <div className="container">
         <div className="row">
           {menu}
         </div>
@@ -52,6 +52,7 @@ class StaffList extends Component{
           {this.renderStaff(this.state.selectedStaff)}
         </div>
       </div>
+    </React.Fragment>
     )
   }
 }
