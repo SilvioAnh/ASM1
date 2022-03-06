@@ -49,6 +49,6 @@
     ]
   },
   "devDependencies": {
-    "reactstrap": "^9.0.1"
+    "reactstrap": "^5.0.0"
   }
 }
