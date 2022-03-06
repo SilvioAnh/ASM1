@@ -17,16 +17,16 @@ class Main extends Component {
   }
   render() {
     return (
-      <div >
-        <Header />
-        <StaffList staffs = {this.state.staffs} />
-        {/*<Switch>*/}
+        <div >
+          <Header />
+          <StaffList staffs = {this.state.staffs} />
+          {/*<Switch>*/}
           {/*<Route path="/staff" component={StaffList}/>*/}
-        {/*  <Route path="/department" component={() => <Department departments={ this.state.departments}/>}/>*/}
-        {/*  <Route exact path ="/payroll" component={()=> <Payroll  payroll={this.state.role}/>}/>*/}
-        {/*</Switch>*/}
-        <Footer />
-      </div>
+          {/*  <Route path="/department" component={() => <Department departments={ this.state.departments}/>}/>*/}
+          {/*  <Route exact path ="/payroll" component={()=> <Payroll  payroll={this.state.role}/>}/>*/}
+          {/*</Switch>*/}
+          <Footer />
+        </div>
     );
   }
 }

@@ -1,5 +1,6 @@
 .row-header{
   margin:0 auto;
+  padding: 0;
 }
 
 .row-content {
@@ -26,6 +27,7 @@ address{
   margin:0;
   color:#0f0f0f;
 }
+
 .navbar-dark {
   background-color: #512DA8;
 }
