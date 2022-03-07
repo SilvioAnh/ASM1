@@ -30,13 +30,13 @@ function RenderName({staffs}){
 function StaffDetail(props){
     return(
         <div className="container">
-            <div className="row">
+            <div className="row m-3">
                 <Breadcrumb>
                     <BreadcrumbItem><Link to="/staff">Nhân Viên</Link></BreadcrumbItem>
                     <BreadcrumbItem active>{props.staffs.name}</BreadcrumbItem>
                 </Breadcrumb>
             </div>
-            <div className="row">
+            <div className="row m-3">
                 <RenderName staffs= {props.staffs}/>
             </div>
         </div>

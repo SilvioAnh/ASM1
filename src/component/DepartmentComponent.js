@@ -1,5 +1,6 @@
 import React from "react";
-import {Card, CardText, CardTitle} from "reactstrap";
+import {Breadcrumb, BreadcrumbItem, Card, CardText, CardTitle} from "reactstrap";
+import {Link} from "react-router-dom";
 
 function Depart({department}){
     const vitri= department.map((depars)=>{
@@ -21,8 +22,16 @@ function Depart({department}){
 function Department(props){
 
     return(
-        <div>
-            <Depart department={props.departments}/>
+        <div className="container">
+            <div className="row mt-3">
+                <Breadcrumb>
+                    <BreadcrumbItem><Link to="/staff">Nhân Viên</Link></BreadcrumbItem>
+                    <BreadcrumbItem active>Bảng Lương</BreadcrumbItem>
+                </Breadcrumb>
+            </div>
+            <div className="row mt-3">
+                <Depart department={props.departments}/>
+            </div>
         </div>
     )
 }
