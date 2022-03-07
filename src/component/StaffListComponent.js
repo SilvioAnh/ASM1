@@ -9,7 +9,7 @@ class StaffList extends Component{
         this.state = {
             selectedStaff : null,
             onCol:"col-5 col-lg-2 col-md-3 m-3",
-            isToggle : false,
+            isToggle : true,
         }
     }
     onColSelected(){
