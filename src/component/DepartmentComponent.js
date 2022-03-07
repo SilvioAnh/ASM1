@@ -5,9 +5,9 @@ import {Link} from "react-router-dom";
 function Depart({department}){
     const vitri= department.map((depars)=>{
         return(
-            <div key={depars.id} className="col-12 col-lg-3 col-md-5 ml-5 mt-3">
+            <div key={depars.id} className="col-12 col-lg-4 col-md-5 mt-3">
                   <Card>
-                    <CardTitle className="ml-1 mb-2">{depars.name}</CardTitle>
+                    <CardTitle className=" mb-2 mt-3">{depars.name}</CardTitle>
                     <CardText className="ml-3 mb-3"> Số lượng nhân viên: {depars.numberOfStaff}</CardText>
                   </Card>
             </div>

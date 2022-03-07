@@ -1,6 +1,6 @@
 import React, {Component} from "react"
 import {Navbar, NavbarBrand, NavItem, Collapse, Nav, NavbarToggler} from "reactstrap";
-import { NavLink} from "reactstrap";
+import { NavLink} from "react-router-dom";
 
 class Hearder extends Component{
   constructor(props) {

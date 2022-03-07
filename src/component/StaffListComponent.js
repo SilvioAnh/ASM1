@@ -35,13 +35,34 @@ class StaffList extends Component{
                     <h3>Nhân Viên</h3>
                 </div>
                 <hr />
-                <div className="row m-3">
-                    <button className="btn btn-success mr-3"
-                            onClick={()=> this.onColSelected(this.state.isToggle?
-                                this.setState({onCol:"col-12 col-lg-3 col-md-4 m-3"}):
-                                this.setState({onCol:"col-5 col-lg-2 col-md-3 m-3"}))}>
-                        Điều chỉnh cột
-                    </button>
+                <div className="row ">
+                    <div className="col-8">
+                        <button className="btn btn-success ml-4"
+                                onClick={()=> this.onColSelected(this.state.isToggle?
+                                    this.setState({onCol:"col-12 col-lg-3 col-md-4 m-3"}):
+                                    this.setState({onCol:"col-5 col-lg-2 col-md-3 m-3"}))}>
+                            Điều chỉnh cột
+                        </button>
+                        <button className="btn btn-success ml-4">
+                            Sale
+                        </button>
+                        <button className="btn btn-success ml-4">
+                            HR
+                        </button>
+                        <button className="btn btn-success ml-4">
+                            Marketing
+                        </button>
+                        <button className="btn btn-success ml-4">
+                            IT
+                        </button>
+                        <button className="btn btn-success ml-4">
+                            Finance
+                        </button>
+                    </div>
+                    <div className="col-4">
+                        <input placeholder="Hãy Nhập tên nhân viên" />
+                    </div>
+
                 </div>
                 <div className="row">
                     {menu}
