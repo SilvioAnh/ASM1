@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import Header from "./HeaderComponent"
-//import {Switch} from "react-router-dom";
+import {Switch, Route, Redirect} from "react-router-dom";
 import Footer from "./FooterComponent";
 import StaffList from "./StaffListComponent";
-// import './App.css';
-import {STAFFS, DEPARTMENTS,ROLE} from "../shared/staffs";
+import StaffDetail from "./StaffDetailComponent";
+import {STAFFS, DEPARTMENTS, ROLE} from "../shared/staffs";
 
 class Main extends Component {
   constructor(props) {
@@ -15,16 +15,21 @@ class Main extends Component {
       role: ROLE,
     };
   }
+
   render() {
-    return (
+    const StaffWithId = ({match}) =>{
+        return(
+            <StaffDetail staffs={this.state.staffs.filter((names)=> names.id === parseInt(match.params.id, 10))[0]}/>
+        )
+    }
+      return (
         <div >
           <Header />
-          <StaffList staffs = {this.state.staffs} />
-          {/*<Switch>*/}
-          {/*<Route path="/staff" component={StaffList}/>*/}
-          {/*  <Route path="/department" component={() => <Department departments={ this.state.departments}/>}/>*/}
-          {/*  <Route exact path ="/payroll" component={()=> <Payroll  payroll={this.state.role}/>}/>*/}
-          {/*</Switch>*/}
+          <Switch>
+            <Route exact path="/staff" component= {()=> <StaffList staffs={this.state.staffs}/>}/>
+            <Route path = "/staff/:id" component={StaffWithId} />
+            <Redirect to="/staff"/>
+          </Switch>
           <Footer />
         </div>
     );
