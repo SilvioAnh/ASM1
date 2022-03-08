@@ -22,6 +22,7 @@ class Main extends Component {
     const StaffWithId = ({match}) =>{
         return(
             <StaffDetail staffs={this.state.staffs.filter((names)=> names.id === parseInt(match.params.id, 10))[0]}/>
+
         )
     }
       return (
