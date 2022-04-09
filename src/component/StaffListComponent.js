@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import {Card, CardTitle, CardImg} from 'reactstrap';
 import {Link} from "react-router-dom";
 
-
 class StaffList extends Component{
     constructor(props) {
         super(props);
@@ -11,35 +10,31 @@ class StaffList extends Component{
             onCol:"col-5 col-lg-2 col-md-3 mt-3",
             isToggle : true,
             staff01: this.props.staffs,
-            staff02: this.props.staffs
         }
     }
     onColSelected(){
-        this.setState({isToggle: !this.state.isToggle, staff02: this.props.staffs})
+        this.setState({isToggle: !this.state.isToggle})
     }
     // nhân viên sale
     staffAll(){
         this.setState( {staff01 : this.props.staffs})
     }
     staffSale(){
-          this.setState( {staff01 : this.state.staff02.filter((names) => names.department.name === "Sale" )})
+          this.setState( {staff01 : this.props.staffs.filter((names) => names.department.name === "Sale" )})
     }
     staffHr(){
-        this.setState({ staff01: this.props.staffs}) ||
-        this.setState( {staff01 : this.state.staff02.filter((names) => names.department.name === "HR" )})
+        this.setState( {staff01 : this.props.staffs.filter((names) => names.department.name === "HR" )})
     }
     staffMarketing(){
-        this.setState({ staff01: this.props.staffs}) ||
-        this.setState( {staff01 : this.state.staff02.filter((names) => names.department.name === "Marketing" )})
+        this.setState( {staff01 : this.props.staffs.filter((names) => names.department.name === "Marketing" )})
     }
     staffIt(){
-        this.setState( {staff01 : this.state.staff02.filter((names) => names.department.name === "IT" )})
+        this.setState( {staff01 : this.props.staffs.filter((names) => names.department.name === "IT" )})
     }
     staffFinance(){
-        this.setState( {staff01 : this.state.staff02.filter((names) => names.department.name === "Finance" )})
+        this.setState( {staff01 : this.props.staffs.filter((names) => names.department.name === "Finance" )})
     }
     render() {
-
          const menu = this.state.staff01.map((names) => {
               return (
                 <div key={names.id} className={this.state.onCol}>
@@ -95,7 +90,6 @@ class StaffList extends Component{
                             Finance
                         </button>
                     </div>
-
 
                 </div>
                 <div className="row">
