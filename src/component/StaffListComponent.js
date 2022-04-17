@@ -1,15 +1,18 @@
 import React, { Component } from "react";
 import {Card, CardTitle, CardImg} from 'reactstrap';
 import {Link} from "react-router-dom";
+import SearchItem from "../redux/searchItem";
 
 class StaffList extends Component{
     constructor(props) {
         super(props);
+        this.handleSearch= this.handleSearch.bind(this);
         this.state = {
             selectedStaff : null,
             onCol:"col-5 col-lg-2 col-md-3 mt-3",
             isToggle : true,
             staff01: this.props.staffs,
+            valueSearch : ''
         }
     }
     onColSelected(){
@@ -34,9 +37,28 @@ class StaffList extends Component{
     staffFinance(){
         this.setState( {staff01 : this.props.staffs.filter((names) => names.department.name === "Finance" )})
     }
+    handleSearch(search){
+        this.setState({
+            valueSearch: search
+        })
+        console.log("giá trị valueSearch thay đổi:" + search)
+    }
     render() {
-         const menu = this.state.staff01.map((names) => {
-              return (
+        let dataOrigin = this.state.staff01;
+        let listNew= [];
+        const search = this.state.valueSearch;
+        if(search.length > 0){
+                dataOrigin.forEach((item)=>{
+                    if(item.name.toLowerCase().indexOf(search) !== -1){
+                        listNew.push(item)
+                    }
+                })
+        }
+         else{
+            listNew=dataOrigin
+        }
+        const menu = listNew.map((names) => {
+            return (
                 <div key={names.id} className={this.state.onCol}>
                     <Card>
                         <Link to={`/staff/${names.id}`} >
@@ -54,15 +76,15 @@ class StaffList extends Component{
                 </div>
                 <hr />
                 <div className=" row mb-4 ">
-                    <input  placeholder="Hãy Nhập tên nhân viên" />
-
+                   <SearchItem searchStaff={ this.state.valueSearch}
+                   handleSearch={ this.handleSearch}/>
                 </div>
                 <div className="row ">
                     <div className="col-12">
                         <button className="btn btn-success m-2"
                                 onClick={()=> this.onColSelected(this.state.isToggle?
                                     this.setState({onCol:"col-12 col-lg-3 col-md-4 mt-3"}):
-                                    this.setState({onCol:"col-5 col-lg-2 col-md-3 mt-3"}))}>
+                                        this.setState({onCol:"col-5 col-lg-2 col-md-3 mt-3"}))}>
                             Điều chỉnh cột
                         </button>
                         <button className="btn btn-success m-2"
@@ -70,7 +92,7 @@ class StaffList extends Component{
                             Toàn bộ nhân viên
                         </button>
                         <button className="btn btn-success m-2"
-                            onClick={()=> this.staffSale(this.state.staff01)}>
+                                onClick={()=> this.staffSale(this.state.staff01)}>
                             Sale
                         </button>
                         <button className="btn btn-success m-2"
@@ -78,15 +100,15 @@ class StaffList extends Component{
                             HR
                         </button>
                         <button className="btn btn-success"
-                                    onClick={()=> this.staffMarketing(this.state.staff01)}>
+                                onClick={()=> this.staffMarketing(this.state.staff01)}>
                             Marketing
                         </button>
                         <button className="btn btn-success m-2"
-                                    onClick={()=> this.staffIt(this.state.staff01)}>
+                                onClick={()=> this.staffIt(this.state.staff01)}>
                             IT
                         </button>
                         <button className="btn btn-success m-2"
-                                    onClick={()=> this.staffFinance(this.state.staff01)}>
+                                onClick={()=> this.staffFinance(this.state.staff01)}>
                             Finance
                         </button>
                     </div>
