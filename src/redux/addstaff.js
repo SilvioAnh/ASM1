@@ -1,6 +1,6 @@
 import React, { Component} from "react";
 import {Col,Button,Modal,ModalHeader,ModalBody,Label,Row,Input,Form,FormFeedback} from "reactstrap";
-import dateFormat from "dateformat";
+
 
 
 class AddStaff extends Component{
@@ -25,6 +25,11 @@ class AddStaff extends Component{
                 name:false,
                 doB:false,
                 startDate:false,
+            },
+            errors:{
+                name:'',
+                doB:'',
+                startDate:'',
             }
          };
     }
@@ -34,7 +39,11 @@ class AddStaff extends Component{
         })
     }
     handleSubmit(e){
-        e.preventDefault()
+        // if(this.validate()){
+        //     this.state()
+        // }
+        e.preventDefault();
+        console.log(e)
     }
     handleInputChange(event){
         const name = event.target.name;
@@ -44,7 +53,8 @@ class AddStaff extends Component{
         })
     }
     handleBlur = (field) =>()=>{
-        this.setState({ touched: {[field]: true }})
+        this.setState({ touched: { ...this.state.touched, [field]: true}})
+        console.log(field)
     }
     validate(name, doB, startDate){
         const errors={
@@ -52,7 +62,7 @@ class AddStaff extends Component{
             doB:'',
             startDate:'',
         }
-        if(this.state.name === ''){
+        if(this.state.touched.name && name.length === 0){
             errors.name = "Hãy cập nhật tên"
         }
         else if(this.state.touched.name &&  name.length<3){
@@ -78,7 +88,7 @@ class AddStaff extends Component{
         const errors= this.validate(this.state.name, this.state.doB, this.state.startDate)
         return(
             <React.Fragment>
-                <Col className="row col-2 col-lg-3 col-md-2 mb-2 " >
+                <Col className="row col-2 col-lg-3 col-md-3 mb-2 " >
                     <Button color="primary" outline
                             onClick={this.toggleModal}>
                         <spam  class="fa fa-plus" aria-hidden="true"/></Button>
@@ -96,7 +106,7 @@ class AddStaff extends Component{
                                            value= {this.state.name}
                                            valid={errors.name === ''}
                                            invalid={errors.name!== ''}
-                                            onBlur={this.handleBlur('name')}
+                                           onBlur={this.handleBlur('name')}
                                            onChange={this.handleInputChange}
                                     />
                                     <FormFeedback>{errors.name}</FormFeedback>
@@ -106,11 +116,11 @@ class AddStaff extends Component{
                                 <Label htmlFor="doB" md={5}>Ngày sinh</Label>
                                 <Col md={7}>
                                     <Input  type="date" dateFormat={"dd/mm/yyyy"} id="doB" name='doB'
-                                           value= {this.state.doB}
-                                           valid={errors.doB === ''}
-                                           invalid={errors.doB!== ''}
-                                          onBlur={this.handleBlur('doB')}
-                                           onChange={this.handleInputChange}
+                                            value= {this.state.doB}
+                                            valid={errors.doB === ''}
+                                            invalid={errors.doB!== ''}
+                                            onBlur={this.handleBlur('doB')}
+                                            onChange={this.handleInputChange}
                                     />
                                     <FormFeedback>{errors.doB}</FormFeedback>
                                 </Col>
@@ -122,7 +132,7 @@ class AddStaff extends Component{
                                            value= {this.state.startDate}
                                            valid={errors.startDate === ''}
                                            invalid={errors.startDate !== ''}
-                                            onBlur={this.handleBlur('startDate')}
+                                           onBlur={this.handleBlur('startDate')}
                                            onChange={this.handleInputChange}
                                     />
                                     <FormFeedback>{errors.startDate}</FormFeedback>
@@ -171,7 +181,7 @@ class AddStaff extends Component{
                             </Row>
                             <Row className="form-group">
                                 <Col md={{size:10, offset:5}}>
-                                    <Button type="submit" color="primary" onClick={ this.validate} > Thêm </Button>
+                                    <Button type="submit" color="primary"  > Thêm </Button>
                                 </Col>
                             </Row>
                         </Form>

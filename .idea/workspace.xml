@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3ed622e5-53a8-4537-9fe5-cefc9491bcfa" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/PayRollComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/PayRollComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/StaffListComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/StaffListComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/searchItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/searchItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/addstaff.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/addstaff.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +86,7 @@
       <workItem from="1649404606886" duration="10382000" />
       <workItem from="1649576920227" duration="18543000" />
       <workItem from="1650121405027" duration="49147000" />
-      <workItem from="1650267765873" duration="34903000" />
+      <workItem from="1650267765873" duration="50884000" />
     </task>
     <servers />
   </component>
