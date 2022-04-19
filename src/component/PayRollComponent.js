@@ -42,7 +42,7 @@ class StaffList extends Component{
 
                             </div>
                             <div className="col-12">
-                                <Card className="text-center">Lương: <TinhLuong names={names}/> </Card>
+                                <Card className="text-center navbar-dark" >Lương: <TinhLuong names={names}/> </Card>
                             </div>
                         </div>
                     </Card>

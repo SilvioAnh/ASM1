@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import {Card, CardTitle, CardImg} from 'reactstrap';
 import {Link} from "react-router-dom";
 import SearchItem from "../redux/searchItem";
+import AddStaff from "../redux/addstaff";
 
 class StaffList extends Component{
     constructor(props) {
@@ -41,7 +42,6 @@ class StaffList extends Component{
         this.setState({
             valueSearch: search
         })
-        console.log("giá trị valueSearch thay đổi:" + search)
     }
     render() {
         let dataOrigin = this.state.staff01;
@@ -72,12 +72,14 @@ class StaffList extends Component{
         return(
             <div className="container">
                 <div className="row m-3">
-                    <h3>Nhân Viên</h3>
+                    <h3 className="row col-9 col-lg-3 col-md-4 mb-2">Nhân Viên</h3>
+                    <AddStaff />
+                    <SearchItem searchStaff={ this.state.valueSearch}
+                                handleSearch={ this.handleSearch}/>
                 </div>
                 <hr />
                 <div className=" row mb-4 ">
-                   <SearchItem searchStaff={ this.state.valueSearch}
-                   handleSearch={ this.handleSearch}/>
+
                 </div>
                 <div className="row ">
                     <div className="col-12">

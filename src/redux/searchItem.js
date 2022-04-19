@@ -7,10 +7,10 @@ class SearchItem extends Component{
     render() {
         return(
             <Col className="row col-12 col-lg-6 col-md-6" >
-                <Input className="col-7 col-lg-6 col-md-6" type="text" name="text" placeholder="Nhập tên nhân viên"
+                <Input className="col-8 col-lg-6 col-md-6" type="text" name="text" placeholder="Nhập tên nhân viên"
                 innerRef={input=> {this.searchStaff= input}}
                  />
-                <Button className="ml-2" color="primary" onClick={()=>this.props.handleSearch(this.searchStaff.value)} >Tìm kiếm</Button>
+                <Button className="ml-2" color="primary" onClick={()=>this.props.handleSearch(this.searchStaff.value)} >Tìm</Button>
             </Col>
         )
     }
