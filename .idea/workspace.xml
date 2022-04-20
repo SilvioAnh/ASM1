@@ -1,13 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="f3af84a4-5ce1-4dd8-b0e2-afc6cdd97e8c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/component/CommentForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/ContactComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/ContactComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/DishdetailComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/DishdetailComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/HeaderComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/HeaderComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/MainComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/MainComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/MenuComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/MenuComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/ConfigStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/ConfigStore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/Reduceer.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -22,9 +40,10 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/shared/dishes.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/Component/DishdetailComponent.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/Component/DishdetailComponent.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Component/MenuComponent.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Component/HomeComponent.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Component/CommentForm.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/package.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Component/MainComponent.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/App.js" root0="FORCE_HIGHLIGHTING" />
@@ -32,7 +51,9 @@
     <setting file="file://$PROJECT_DIR$/src/Component/ContactComponent.js" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="25k6f1mQkEWPoW7kkGmuB8AblpL" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="compactDirectories" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -44,7 +65,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../stafflist" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -77,12 +100,34 @@
       <workItem from="1646889396553" duration="2346000" />
       <workItem from="1646891806830" duration="393000" />
       <workItem from="1646917435152" duration="1134000" />
-      <workItem from="1647355358499" duration="5707000" />
+      <workItem from="1647355358499" duration="42587000" />
+      <workItem from="1648387866381" duration="4236000" />
+      <workItem from="1649108248684" duration="1564000" />
+      <workItem from="1649494161292" duration="5662000" />
+      <workItem from="1649781698919" duration="2563000" />
+      <workItem from="1650194094789" duration="73000" />
+      <workItem from="1650194179529" duration="10829000" />
+      <workItem from="1650276758623" duration="521000" />
+      <workItem from="1650279389316" duration="2937000" />
+      <workItem from="1650367102061" duration="10166000" />
+      <workItem from="1650462079883" duration="2097000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="LAST_COMMIT_MESSAGE" value="" />

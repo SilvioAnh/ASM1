@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {Breadcrumb,BreadcrumbItem,Label,Row,Col,Button} from 'reactstrap';
 import {Link} from 'react-router-dom';
 import {Control, LocalForm, Errors} from 'react-redux-form'
-
 const required = (val)=>val&& val.length
 const maxLength = (len) => (val)=> !(val) || (val.length<=len)
 const minLength = (len) => (val)=> (val) && (val.length>=len)
@@ -16,11 +15,21 @@ class Contact extends Component{
 
         this.handleSubmit= this.handleSubmit.bind(this);
     }
-
+    // handleInputChange(event) {
+    //  Lưu tiêu đề đối tượng để tham khảo trong tương lai
+    //     const target = event.target;
+    //     const value = target.type === 'checkbox' ? target.checked : target.value;
+    //   Lưu tên mục tiêu của sự kiện vào biến (name)
+    //     const name = target.name;    
+    //
+    //     this.setState({
+    //         [name]: value
+    //     });
+    // }
     handleSubmit(values){
         console.log("Current State is: " + JSON.stringify(values));
         alert("Current State is: " + JSON.stringify(values));
-        //event.preventDefault(): ngan viec chuyen sang trang khac
+
     }
     render() {
         return (
@@ -96,9 +105,9 @@ class Contact extends Component{
                                 </Col>
                             </Row>
                             <Row className="form-group">
-                                <Label htmlFor="lastname" md={2}>
-                                    Last Name
-                                </Label>
+                                    <Label htmlFor="lastname" md={2}>
+                                        Last Name
+                                    </Label>
                                 <Col md={10}>
                                     <Control.text model=".lastname" id="lastname" name="lastname" placeholder="lastname"
                                           className="form-control"
@@ -197,11 +206,10 @@ class Contact extends Component{
                                 </Col>
                             </Row>
                             <Row className="form-group" >
-                                <Col md={{size:10, offset:2}}>
+                                <Col md={{size:10, offset:2}} >
                                     <Button type="submit" color="primary">
                                         Send Feedback
                                     </Button>
-
                                 </Col>
                             </Row>
                         </LocalForm>
