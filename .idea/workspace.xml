@@ -6,10 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="f3af84a4-5ce1-4dd8-b0e2-afc6cdd97e8c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/CommentForm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/DishdetailComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/DishdetailComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/MainComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/MainComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/comment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/ActionCreators.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/ActionCreators.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/ActionType.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/ActionType.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/ConfigStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/ConfigStore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/dishes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/dishes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +43,7 @@
     <setting file="file://$PROJECT_DIR$/src/Component/DishdetailComponent.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Component/MenuComponent.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/setupTests.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/redux/dishes.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Component/HeaderComponent.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Component/HomeComponent.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/package.json" root0="FORCE_HIGHLIGHTING" />
@@ -48,6 +51,7 @@
     <setting file="file://$PROJECT_DIR$/src/Component/MainComponent.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/App.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Component/ContactComponent.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/redux/ConfigStore.js" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="25k6f1mQkEWPoW7kkGmuB8AblpL" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -110,7 +114,7 @@
       <workItem from="1650279389316" duration="2937000" />
       <workItem from="1650367102061" duration="10166000" />
       <workItem from="1650462079883" duration="11868000" />
-      <workItem from="1650532171969" duration="1230000" />
+      <workItem from="1650532171969" duration="9561000" />
     </task>
     <servers />
   </component>
