@@ -1,7 +1,6 @@
 import React, {Component} from "react";
-import { Card, CardImg, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbItem,
-Input, Modal, ModalHeader, ModalBody, Label, Col,  Button} from 'reactstrap';
-import {Control, LocalForm, Errors} from "react-redux-form"
+import { Card, CardImg, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbItem, Modal, ModalHeader, ModalBody, Label, Col,  Button, Row} from 'reactstrap';
+import {Control, LocalForm} from "react-redux-form"
 import { Link } from 'react-router-dom';
 
     function  RenderDish({dish}) {
@@ -18,7 +17,7 @@ import { Link } from 'react-router-dom';
         );
     }
 
-    function RenderComments({comments}) {
+    function RenderComments({comments, addComment, dishId}) {
         if (comments != null) {
             return (
                 <div>
@@ -28,6 +27,7 @@ import { Link } from 'react-router-dom';
                             return (
                                 <li key={comment.id}>
                                     <p>{comment.comment}</p>
+                                    <p>{comment.rating} stars</p>
                                     <p>
                                         -- {comment.author},
                                         {new Intl.DateTimeFormat('en-US',
@@ -40,9 +40,7 @@ import { Link } from 'react-router-dom';
                         })}
                     </ul>
                     <div className="row">
-                        <Button>
-                            <span className="fa fa-pencil"/> Submit Comment
-                        </Button>
+                        <CommentForm dishId={dishId} addComment={addComment}/>
                     </div>
 
                 </div>
@@ -51,52 +49,72 @@ import { Link } from 'react-router-dom';
             return <div/>;
         }
     }
-class CommentForm extends Component{
+class CommentForm extends Component {
+
     constructor(props) {
         super(props);
-        this.state={
-            isModalComment: false,
-        }
-        this.tonggleModalComment= this.tonggleModalComment.bind(this);
+        this.toggleModal = this.toggleModal.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.state = {
+            isNavOpen: false,
+            isModalOpen: false,
+        };
     }
-    tonggleModalComment(){
-        this.setState({isModalComment : !this.state.isModalComment})
+
+    toggleModal() {
+        this.setState({
+            isModalOpen: !this.state.isModalOpen
+        });
     }
+
+    handleSubmit(values) {
+        this.toggleModal();
+        this.props.addComment(this.props.dishId, values.rating, values.author, values.comment);
+
+    }
+
     render() {
         return(
-            <Modal isOpen={this}>
-                <ModalHeader>Submit Comment</ModalHeader>
-                <ModalBody>
-                    <LocalForm>
-                        <Col>
-                            <Label>Rating</Label>
-                            <Control.select model=".rating" id="rating" name="rating"
-                                            className="form-control">
-                                <option className="fa fa-star">1</option>
-                                <option className="fa fa-star">2</option>
-                                <option className="fa fa-star">3</option>
-                                <option className="fa fa-star">4</option>
-                                <option className="fa fa-star">5</option>
-                            </Control.select>
-                        </Col>
-                        <Col>
-                            <Label>Your Name</Label>
-                            <Control.text model=".yourname" id="yourname" name="yourname"
-                                          className="form-control" placeholder="Your Name"/>
-                        </Col>
-                        <Col>
-                            <Label>Comment</Label>
-                            <Control.texttarea model=".comment" id="comment"  name="comment" rows="10"/>
-                        </Col>
-                        <Col>
-                            <Button type="submit" color="primary">
+            <div>
+                <Button outline onClick={this.toggleModal}><span className="fa fa-pencil fa-lg"/> Submit Comment</Button>
+                <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
+                    <ModalHeader toggle={this.toggleModal}>Submit Comment</ModalHeader>
+                    <ModalBody>
+                        <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
+                            <Row className="form-group">
+                                <Col>
+                                    <Label htmlFor="rating">Rating</Label>
+                                    <Control.select model=".rating" id="rating" className="form-control">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </Control.select>
+                                </Col>
+                            </Row>
+                            <Row className="form-group">
+                                <Col>
+                                    <Label htmlFor="yourName">Your name</Label>
+                                    <Control.text model=".yourName" id="yourName"
+                                                  className="form-control" placeholder="Your name" />
+                                </Col>
+                            </Row>
+                            <Row className="form-group">
+                                <Col>
+                                    <Label htmlFor="comment">Comment</Label>
+                                    <Control.textarea model=".comment" id="comment"
+                                                      rows="6" className="form-control" />
+                                </Col>
+                            </Row>
+                            <Button type="submit" className="bg-primary">
                                 Submit
                             </Button>
-                        </Col>
-                    </LocalForm>
-                </ModalBody>
-            </Modal>
-        )
+                        </LocalForm>
+                    </ModalBody>
+                </Modal>
+            </div>
+        );
     }
 }
     function DishDetail(props) {
@@ -118,7 +136,10 @@ class CommentForm extends Component{
                             <RenderDish dish={props.dish} />
                         </div>
                         <div className="col-12 col-md-5 m-1">
-                            <RenderComments comments={props.comments} />
+                            <RenderComments comments={props.comments}
+                                            addComment = {props.addComment}
+                                            dishId={props.dish.id}
+                            />
                         </div>
                     </div>
                 </div>
