@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="3ed622e5-53a8-4537-9fe5-cefc9491bcfa" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/StaffListComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/StaffListComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/addstaff.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/addstaff.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -86,11 +90,24 @@
       <workItem from="1649404606886" duration="10382000" />
       <workItem from="1649576920227" duration="18543000" />
       <workItem from="1650121405027" duration="49147000" />
-      <workItem from="1650267765873" duration="50884000" />
+      <workItem from="1650267765873" duration="80565000" />
+      <workItem from="1650468444536" duration="688000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
