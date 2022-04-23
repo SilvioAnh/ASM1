@@ -49,7 +49,7 @@ class StaffList extends Component{
         const search = this.state.valueSearch;
         if(search.length > 0){
                 dataOrigin.forEach((item)=>{
-                    if(item.name.toLowerCase().indexOf(search) !== -1){
+                    if(item.name.toLowerCase().indexOf(search) !== -1|| item.name.indexOf(search) !== -1){
                         listNew.push(item)
                     }
                 })
