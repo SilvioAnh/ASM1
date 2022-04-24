@@ -3,12 +3,13 @@ import { Card, CardImg, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbIte
 import {Control, LocalForm} from "react-redux-form"
 import { Link } from 'react-router-dom';
 import { Loading } from '../redux/LoadingComponent';
+import {baseUrl} from "../shared/baseUrl";
 
     function  RenderDish({dish}) {
         return (
             <div>
                 <Card>
-                    <CardImg width="100%" src={dish.image} value={dish.name} />
+                    <CardImg width="100%" src={baseUrl + dish.image} value={dish.name} />
                     <CardBody>
                         <CardTitle>{dish.name}</CardTitle>
                         <CardText>{dish.description}</CardText>
@@ -138,8 +139,7 @@ class CommentForm extends Component {
                 );
             }
             else if (props.dish != null)
-
-            if (props.dish != null) {
+            {
             return (
                 <div className="container">
                     <div className="row">
