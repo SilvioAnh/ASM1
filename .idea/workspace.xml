@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f3af84a4-5ce1-4dd8-b0e2-afc6cdd97e8c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Component/MainComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/MainComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/ActionCreators.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/ActionCreators.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/comment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +117,7 @@
       <workItem from="1650462079883" duration="11868000" />
       <workItem from="1650532171969" duration="13856000" />
       <workItem from="1650724572327" duration="26271000" />
-      <workItem from="1650812356381" duration="6727000" />
+      <workItem from="1650812356381" duration="11213000" />
     </task>
     <servers />
   </component>
