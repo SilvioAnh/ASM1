@@ -44,6 +44,31 @@ export const addComment = (comment) =>({
     type: ActionTypes.ADD_COMMENT,
     payload: comment,
 })
+export const postFeedback = (feedback) => (dispatch)=>{
+  return fetch(baseUrl + 'feedback', {
+        method: 'POST',
+        body: JSON.stringify(feedback),
+        headers:{
+            'Content-Type' : 'application/json'
+        },
+      credentials: "same-origin"
+  })
+      .then(response => {
+          if(response.ok){
+              return response
+          }else {
+              var error = new Error('Error' + response.status + ':' + response.statusText);
+              error.responsr = response;
+              throw error;
+          }
+      },
+          error => {
+          throw error;
+          } )
+      .then(response => response.json())
+      .then(response => {console.log('feadback',response); alert("Thank you for your feedback!\n" + JSON.stringify(response))})
+      .catch(error => {console.log('feedback', error.message); alert("Feadback your not be posted\n Error: " + error.message)})
+}
 export const postComment = (dishId, rating, author, comment) => (dispatch) =>{
     const newComment = {
         dishId: dishId,
