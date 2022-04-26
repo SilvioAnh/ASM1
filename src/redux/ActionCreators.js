@@ -2,6 +2,44 @@ import *as ActionTypes from "./ActionType";
 //import { DISHES } from '../shared/dishes';
 import {baseUrl} from "../shared/baseUrl";
 
+// cho phép tìm nạp thông tin leaders từ máy chủ và cập nhật redux
+export const adddLeaders = (leaders) => ({
+    type: ActionTypes.ADD_LEADERS,
+    payload: leaders,
+
+});
+export const fetchLeaders = () => (dispatch) => {
+    //dispatch(leadersLoading());
+
+    return fetch(baseUrl + "leaders")
+        .then(response => {
+            if(response.ok){
+                return response;
+            }else{
+                let error = new Error("Error" + response.status + ":" + response.statusText)
+                error.response = response;
+                throw  error;
+            }
+        },
+            error => {
+                var errmess = new Error(error.message)
+                throw errmess
+            })
+        .then(response => response.json())
+        .then( leaders => dispatch(adddLeaders(leaders)))
+        .catch( error => dispatch(leadersFailed(error.message)))
+
+}
+export const leadersFailed = errmess => ({
+    type: ActionTypes.LEADERS_FAILED,
+    payload: errmess,
+})
+export const leadersLoading = () => ({
+    type: ActionTypes.LEADERS_LOADING,
+});
+
+
+
 export const addComment = (comment) =>({
     type: ActionTypes.ADD_COMMENT,
     payload: comment,
@@ -51,7 +89,7 @@ export const fetchDishes =  () => (dispatch) => {
                 throw error;
             }
         },
-        error => { //xu ly khi khoong co phan hoi tu may chy
+        error => { //xu ly khi khoong co phan hoi tu may chu
             let errmess = new Error(error.message);
             throw errmess;
         })
