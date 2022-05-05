@@ -7,7 +7,10 @@
     "@progress/kendo-react-dateinputs": "^5.2.0",
     "@progress/kendo-react-intl": "^5.2.0",
     "@progress/kendo-theme-material": "^5.3.1",
+<<<<<<< HEAD
     "@syncfusion/ej2-react-calendars": "^20.1.47",
+=======
+>>>>>>> origin/RJS101x_Assigment3_anhlbtfx13564@funix.edu.vn
     "antd": "^4.19.5",
     "bootstrap": "4.0.0",
     "bootstrap-social": "5.1.1",
@@ -19,8 +22,12 @@
     "dateformat": "^4.6.3",
     "font-awesome": "4.7.0",
     "moment": "^2.29.3",
+<<<<<<< HEAD
     "nui": "^0.0.9",
     "prop-types": "^15.6.0",
+=======
+    "prop-types": "15.6.0",
+>>>>>>> origin/RJS101x_Assigment3_anhlbtfx13564@funix.edu.vn
     "rc-datepicker": "^5.0.16",
     "react": "^16.3.2",
     "react-animation-components": "3.0.0",
