@@ -1,13 +1,15 @@
 import React, { Component} from "react";
 import {Col,Button,Modal,ModalHeader,ModalBody,Label,Row} from "reactstrap";
 import {LocalForm, Control, Errors} from "react-redux-form";
-import DatePick from "./datepick";
+import DatePick from "./datepick.js"
+import moment from 'moment';
+
 
 const required = val =>val && val.length;
 //const lengthText = len => val =>  (val.length) === 0;
 const maxLength = (len) => (val)=> !(val) || (val.length<=len);
 const minLength = (len) => (val)=> !(val) || (val.length>=len);
-const isDate= (val) =>/^([0-9]{2})-([0-9]{2})-([0-9]{4})$/.test(val)
+const isDate= (val) => moment(val, 'DD/MM/YYYY', true).isValid()
 
 class AddStaff extends Component{
     constructor(props) {
@@ -17,8 +19,9 @@ class AddStaff extends Component{
         //this.handleInputChange=this.handleInputChange.bind(this);
        // this.handleBlur=this.handleBlur.bind(this)
         this.state={
+
             name: '',
-            doB: '',
+            doB: "",
             salaryScale: '',
             startDate: '',
             department: '',
@@ -88,6 +91,7 @@ class AddStaff extends Component{
         //const errors= this.validate(this.state.name, this.state.doB, this.state.startDate)
         return(
             <React.Fragment>
+
                 <Col className="row col-2 col-lg-3 col-md-3 mb-2 " >
                     <Button color="primary" outline
                             onClick={this.toggleModal}>
@@ -112,6 +116,7 @@ class AddStaff extends Component{
                                                 maxLength:maxLength(30)
                                           }}
                                     />
+
                                     <Errors
                                         className="text-danger"
                                         model=".name"
@@ -130,9 +135,9 @@ class AddStaff extends Component{
                                 <Col md={7}>
                                     <Control.text  model=".doB" id="doB" name='doB' className="form-control"
                                                    component={DatePick}
-                                                   placeholder="dd/mm/yyyy"
+
                                                    validators = {{
-                                                      isDate:isDate()
+                                                      isDate
                                                    }}
                                     />
 
@@ -141,8 +146,7 @@ class AddStaff extends Component{
                                         model=".doB"
                                         show="touched"
                                         messages = {{
-
-                                            isDate: 'Hãy cập nhật ngày sinh của nhân viên',
+                                           isDate: 'Hãy cập nhật ngày sinh của nhân viên',
 
                                         }}
                                     />
@@ -152,10 +156,10 @@ class AddStaff extends Component{
                                 <Label htmlFor="startDate" md={5}>Ngày vào công ty</Label>
                                 <Col md={7}>
                                     <Control.text model=".startDate" name="startDate" className="form-control"
-                                                  placeholder="dd/mm/yyyy"
-                                                  component={DatePick}
+                                                 component={ DatePick}
+
                                                   validators={{
-                                                      isDate
+                                                     isDate
                                                    }}
                                     />
                                     <Errors
@@ -164,7 +168,7 @@ class AddStaff extends Component{
                                         show="touched"
                                         messages={{
 
-                                            isDate: 'Hãy cập nhật ngày bắt đầu vào công ty'
+                                           isDate: 'Hãy cập nhật ngày bắt đầu vào công ty'
                                         }}
                                     />
                                 </Col>

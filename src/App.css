@@ -1,3 +1,4 @@
+
 .row-header{
   margin:0 auto;
   padding: 0;
@@ -34,4 +35,7 @@ address{
 }
 .color{
   color: black;
+}
+.inputs{
+  height: 100%
 }

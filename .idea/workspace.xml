@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ed622e5-53a8-4537-9fe5-cefc9491bcfa" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/StaffListComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/StaffListComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/addstaff.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/addstaff.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/datepick.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/datepick.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/searchItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/searchItem.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,12 +41,12 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/shared/staffs.jsx" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/component/FooterComponent.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/component/MainStaffComponent.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/component/StaffListComponent.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/App.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/component/FooterComponent.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/shared/staffs.jsx" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/component/HeaderComponent.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/component/MainStaffComponent.js" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="25t6czOnxcdrJjYEmFMv71iy6N1" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -56,6 +58,7 @@
     <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -67,7 +70,7 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -92,6 +95,11 @@
       <workItem from="1650121405027" duration="49147000" />
       <workItem from="1650267765873" duration="80565000" />
       <workItem from="1650468444536" duration="688000" />
+      <workItem from="1650772181002" duration="1092000" />
+      <workItem from="1650813514403" duration="1870000" />
+      <workItem from="1650895902081" duration="32790000" />
+      <workItem from="1651161615312" duration="6798000" />
+      <workItem from="1651560076462" duration="25138000" />
     </task>
     <servers />
   </component>

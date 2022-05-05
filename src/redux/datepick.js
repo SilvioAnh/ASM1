@@ -1,45 +1,36 @@
+//https://mui.com/x/react-date-pickers/date-picker/
+//https://reactjsexample.com/a-decent-and-pretty-date-picker-to-be-used-with-reactjs/
+//https://github.com/buildo/rc-datepicker/blob/master/examples/examples.js
+//https://codesandbox.io/s/13idt?file=/src/index.js:0-2484
+//https://codesandbox.io/s/yf1rh?file=/src/App.js:0-858
 
-import React, { useState } from "react";
-import DatePicker from "react-datepicker";
-import moment from "moment";
-import "./App.css";
-import "react-datepicker/dist/react-datepicker.css";
 
-function DatePick() {
-        const [checkInDate, setCheckInDate] = useState(null);
-        const [checkOutDate, setCheckOutDate] = useState(null);
+import React from "react";
+import 'react-datepicker/dist/react-datepicker.css';
+import DatePicker from "react-datepicker"
 
-        const handleCheckInDate = (date) => {
-                setCheckInDate(date);
-                setCheckOutDate(null);
+class DatePick extends React.Component {
+    constructor(props) {
+        super(props);
+        this.selected= this.selected.bind(this)
+        this.state = {
+            date: null
         };
+    }
+    selected = e =>{
+        this.setState({ date: e})
+    }
 
-        const handleCheckOutDate = (date) => {
-                setCheckOutDate(date);
-        };
-
-        return (
-            <div className="App">
-                    <div className="input-container">
-                            <div>
-                                    <label>Check-in</label>
-omm                                    <DatePicker
-                                        selected={checkInDate}
-                                        minDate={new Date()}
-                                        onChange={handleCheckInDate}
-                                    />
-                            </div>
-                            <div>
-                                    <label>Check-out</label>
-                                    <DatePicker
-                                        selected={checkOutDate}
-                                        minDate={checkInDate}
-                                        onChange={handleCheckOutDate}
-                                    />
-                            </div>
-                    </div>
-            </div>
-        );
+    render() {
+        return(
+                <DatePicker
+                    className="form-control"
+                    selected={this.state.date}
+                    onChange={this.selected}
+                    dateFormat="dd/MM/yyyy"
+                    placeholderText="dd/mm/yyyy"
+                />
+        )
+    }
 }
-
 export default DatePick;
