@@ -16,6 +16,7 @@ class StaffList extends Component{
             valueSearch : ''
         }
     }
+
     onColSelected(){
         this.setState({isToggle: !this.state.isToggle})
     }
@@ -78,9 +79,7 @@ class StaffList extends Component{
                                 handleSearch={ this.handleSearch}/>
                 </div>
                 <hr />
-                <div className=" row mb-4 ">
 
-                </div>
                 <div className="row ">
                     <div className="col-12">
                         <button className="btn btn-success m-2"

@@ -1,7 +1,7 @@
 import React, { Component} from "react";
 import {Col,Button,Modal,ModalHeader,ModalBody,Label,Row} from "reactstrap";
-import {LocalForm, Control, Errors} from "react-redux-form";
-import DatePick from "./datepick.js"
+import {LocalForm, Control, Errors,Field} from "react-redux-form";
+
 import moment from 'moment';
 
 
@@ -9,7 +9,7 @@ const required = val =>val && val.length;
 //const lengthText = len => val =>  (val.length) === 0;
 const maxLength = (len) => (val)=> !(val) || (val.length<=len);
 const minLength = (len) => (val)=> !(val) || (val.length>=len);
-const isDate= (val) => moment(val, 'DD/MM/YYYY', true).isValid()
+const isDate= (val) => moment(val, true).isValid()
 
 class AddStaff extends Component{
     constructor(props) {
@@ -19,22 +19,7 @@ class AddStaff extends Component{
         //this.handleInputChange=this.handleInputChange.bind(this);
        // this.handleBlur=this.handleBlur.bind(this)
         this.state={
-
-            name: '',
-            doB: "",
-            salaryScale: '',
-            startDate: '',
-            department: '',
-            annualLeave: "",
-            overTime: "",
-            salary: "",
-            image: '/assets/images/alberto.png',
             isOpenModal: false,
-            touched:{
-                name:false,
-                doB:false,
-                startDate:false,
-            },
          };
     }
     toggleModal(){
@@ -43,9 +28,11 @@ class AddStaff extends Component{
         })
     }
     handleSubmit(value){
-            console.log("Current State is: " + JSON.stringify(value));
-            alert("Current State is: " + JSON.stringify(value));
-
+            console.log("Add staffs: " + JSON.stringify(value));
+            alert("Add staffs: " + JSON.stringify(value));
+            this.setState({
+                 isOpenModal: !this.state.isOpenModal
+            })
 
     }
     // handleInputChange(event){
@@ -86,7 +73,6 @@ class AddStaff extends Component{
     //     }
     //     this.setState()
     //     return errors;
-
     render() {
         //const errors= this.validate(this.state.name, this.state.doB, this.state.startDate)
         return(
@@ -133,20 +119,19 @@ class AddStaff extends Component{
                             <Row className="form-group">
                                 <Label htmlFor="doB" md={5}>Ngày sinh</Label>
                                 <Col md={7}>
-                                    <Control.text  model=".doB" id="doB" name='doB' className="form-control"
-                                                   component={DatePick}
-
-                                                   validators = {{
-                                                      isDate
-                                                   }}
-                                    />
-
+                                    <Field model=".doB" id="doB" name='doB' value='doB'
+                                           validators={{
+                                               isDate, required
+                                           }}>
+                                        <input type='date' className="form-control"/>
+                                    </Field>
                                     <Errors
                                         className="text-danger"
                                         model=".doB"
                                         show="touched"
                                         messages = {{
-                                           isDate: 'Hãy cập nhật ngày sinh của nhân viên',
+                                          // isDate: 'Hãy cập nhật ngày sinh của nhân viên',
+                                            required: 'Hãy cập nhật ngày bắt đầu vào công ty'
 
                                         }}
                                     />
@@ -155,20 +140,26 @@ class AddStaff extends Component{
                             <Row className="form-group">
                                 <Label htmlFor="startDate" md={5}>Ngày vào công ty</Label>
                                 <Col md={7}>
-                                    <Control.text model=".startDate" name="startDate" className="form-control"
-                                                 component={ DatePick}
-
-                                                  validators={{
-                                                     isDate
-                                                   }}
-                                    />
+                                    <Field model=".startDate" name="startDate" id="startDate" value="startDate"
+                                                      validators={{
+                                                         isDate, required
+                                                       }}>
+                                        <input type='date' className="form-control"/>
+                                    </Field>
+                                    {/*       */}
+                                    {/*              component="input"*/}
+                                    {/*              type="date"*/}
+                                    {/*              validators={{*/}
+                                    {/*                 isDate*/}
+                                    {/*               }}*/}
+                                    {/*/>*/}
                                     <Errors
                                         className="text-danger"
                                         model=".startDate"
                                         show="touched"
                                         messages={{
+                                            required: 'Hãy cập nhật ngày bắt đầu vào công ty'
 
-                                           isDate: 'Hãy cập nhật ngày bắt đầu vào công ty'
                                         }}
                                     />
                                 </Col>
